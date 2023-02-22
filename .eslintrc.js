@@ -30,6 +30,7 @@ module.exports = {
   root: true,
   rules: {
     indent: ['error', 2],
+    'jsx-a11y/no-static-element-interactions': 'off',
     'no-console': 'off',
     quotes: ['error', 'single'],
     'react/react-in-jsx-scope': 'off',
