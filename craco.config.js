@@ -7,7 +7,13 @@ module.exports = {
       'no-console': 'off',
       quotes: ['error', 'single'],
       'react/react-in-jsx-scope': 'off',
-      semi: ['error', 'never']
+      semi: ['error', 'never'],
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'auto'
+        }
+      ]
     }
   },
   webpack: {
@@ -15,7 +21,8 @@ module.exports = {
       '@app': path.resolve(__dirname, './src/app'),
       '@assets': path.resolve(__dirname, './src/assets'),
       '@images': path.resolve(__dirname, './src/assets/images'),
-      '@components': path.resolve(__dirname, './src/components')
+      '@components': path.resolve(__dirname, './src/components'),
+      '@styles': path.resolve(__dirname, './src/globalStyles')
     },
     module: {
       rules: {
