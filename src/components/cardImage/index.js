@@ -1,12 +1,14 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 
 import style from './CardImage.module.scss'
 
 const CardImage = (props) => {
-  return <img className={style.cardImage} alt="Star Wars Character" src={props.imageSource} />
+  return <div className={style.cardImage} style={{ backgroundImage: `url(${props.imageUrl})` }} />
 }
 
 CardImage.propTypes = {
-  imageSource: PropTypes.instanceOf(File)
+  imageUrl: PropTypes.string.isRequired
 }
+
+export default CardImage

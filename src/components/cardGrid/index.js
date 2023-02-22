@@ -1,14 +1,24 @@
-import React from 'react'
+import { appContext } from '@app'
 import Card from '@components/card'
-import style from './CardGrid.module.style'
+import React, { useContext } from 'react'
 
-const cardGrid = () => {
-  const characterArray = [1, 2, 3]
-  const createCards = (arr) => arr.Map((card) => <Card number={card} />)
+import style from './CardGrid.module.scss'
 
-  const cardSet = createCards(characterArray)
+const CardGrid = () => {
+  const { characterArr } = useContext(appContext)
+
+  const createCardSet = (arr) =>
+    arr.map((character) => (
+      <Card
+        character={character.characterName}
+        imageUrl={character.imageUrl}
+        key={character.identifier}
+      />
+    ))
+
+  const cardSet = createCardSet(characterArr)
 
   return <div className={style.cardGrid}>{cardSet}</div>
 }
 
-export default cardGrid
+export default CardGrid
