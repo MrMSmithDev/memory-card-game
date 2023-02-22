@@ -33,7 +33,13 @@ module.exports = {
     'no-console': 'off',
     quotes: ['error', 'single'],
     'react/react-in-jsx-scope': 'off',
-    semi: ['error', 'never']
+    semi: ['error', 'never'],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto'
+      }
+    ]
   },
   settings: {
     react: {
