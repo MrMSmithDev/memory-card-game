@@ -2,19 +2,19 @@
 
 @font-face {
   font-family: distant-galaxy;
-  src: url('@assets/fonts/distgrg_-webfont.woff') format('woff'),
-    url('@assets/fonts/distgrg_-webfont.woff2') format('woff2');
+  src: url('~@assets/fonts/distgrg_-webfont.woff') format('woff'),
+    url('~@assets/fonts/distgrg_-webfont.woff2') format('woff2');
   font-style: normal;
   font-weight: normal;
 }
 
 /* 
-     A set of styles to reset various elements
-     to allow for compatibility across multiple
-     browsers tweaked from the Meyerweb reset,
-     available at:
-     https://meyerweb.com/eric/tools/css/reset/
-  */
+       A set of styles to reset various elements
+       to allow for compatibility across multiple
+       browsers tweaked from the Meyerweb reset,
+       available at:
+       https://meyerweb.com/eric/tools/css/reset/
+    */
 
 html,
 body,
