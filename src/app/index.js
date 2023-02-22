@@ -1,11 +1,15 @@
-import '@app'
+import Footer from '@components/footer'
+import Header from '@components/header'
 
-import './App.module.css'
+import style from './App.module.scss'
 
 function App() {
   return (
     <div className="App">
-      <p>Welcome to the galaxy</p>
+      <div className={style.appBackground}>
+        <Header />
+        <Footer />
+      </div>
     </div>
   )
 }
