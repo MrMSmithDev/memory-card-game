@@ -1,3 +1,4 @@
+@import '~@styles/_variables.scss';
 /* Global font import */
 
 @font-face {
@@ -79,3 +80,10 @@ nav,
 section {
   display: block;
 }
+
+/* Overflow scrollbar for non-compatible browsers */
+
+html {
+  scrollbar-color: $hover-color none;
+  scrollbar-width: thin;
+ }
