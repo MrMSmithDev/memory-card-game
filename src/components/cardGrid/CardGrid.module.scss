@@ -1,3 +1,5 @@
+@import '~@styles/_variables.scss';
+
 .cardGrid {
     display: grid;
     grid-auto-rows: 400px;
@@ -5,6 +7,28 @@
     grid-gap: 20px;
     justify-items: center;
     margin-bottom: 20px;
+    overflow-x: none;
     overflow-y: auto;
     width: 95%;
+
+    &::-webkit-scrollbar {
+        width: .5em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-clip: padding-box;
+        background-color: #fff;
+        border-radius: 5px;
+        z-index: 100;
+
+        /* Lightsaber style glow */
+        box-shadow: 0 0 30px 20px $hover-color;
+        -moz-box-shadow: 0 0 30px 20px $hover-color;
+        -webkit-box-shadow: 0 0 30px 20px $hover-color;
+        pointer-events: none;
+    }
+
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
 }
