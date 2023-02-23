@@ -7,11 +7,15 @@
     grid-gap: 20px;
     justify-items: center;
     margin-bottom: 20px;
-    overflow-x: none;
+    padding: 10px;
+    overflow-x: visible;
     overflow-y: auto;
     width: 95%;
+    z-index: 5;
 
     &::-webkit-scrollbar {
+        position: absolute;
+        right: 50px;
         width: .5em;
     }
 
@@ -19,7 +23,6 @@
         background-clip: padding-box;
         background-color: #fff;
         border-radius: 5px;
-        z-index: 100;
 
         /* Lightsaber style glow */
         box-shadow: 0 0 30px 20px $hover-color;
