@@ -19,8 +19,8 @@ module.exports = {
   webpack: {
     alias: {
       '@app': path.resolve(__dirname, './src/app'),
-      '@assets': path.resolve(__dirname, './src/assets'),
-      '@images': path.resolve(__dirname, './src/assets/images'),
+      '@fonts': path.resolve(__dirname, './public/static/fonts'),
+      '@images': path.resolve(__dirname, './public/static/images'),
       '@components': path.resolve(__dirname, './src/components'),
       '@styles': path.resolve(__dirname, './src/globalStyles')
     },
