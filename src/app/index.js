@@ -1,4 +1,5 @@
-import CardGrid from '@components/cardGrid'
+import appBackground from '@assets/images/background.jpg'
+import CardGrid from '@components/cardGrid/index'
 import Footer from '@components/footer'
 import Header from '@components/header'
 import PropTypes from 'prop-types'
@@ -135,7 +136,7 @@ AppProvider.propTypes = {
 const App = () => {
   return (
     <div className="App">
-      <div className={style.appBackground}>
+      <div className={style.appBackground} style={{ backgroundImage: `url(${appBackground})` }}>
         <AppProvider>
           <Header />
           <CardGrid />
