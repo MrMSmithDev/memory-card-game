@@ -6,9 +6,9 @@ import style from './Footer.module.scss'
 
 const Footer = () => {
   return (
-    <footer className={style.container}>
+    <footer className={style.container} role="contentinfo">
       <a className={style.footerLink} href="https://github.com/MBright90/memory-card-game">
-        <FontAwesomeIcon icon={faGithub} /> MBright90
+        <FontAwesomeIcon icon={faGithub} role="img" /> MBright90
       </a>
     </footer>
   )
