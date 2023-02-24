@@ -27,6 +27,7 @@ const Card = (props) => {
       onClick={handleCardChoice}
       onKeyDown={handleKeyDown}
       tabIndex={props.tabIndex}
+      role={'button'}
     >
       <p className={style.cardTitle}>{props.character}</p>
       <CardImage imageUrl={props.imageUrl} />
