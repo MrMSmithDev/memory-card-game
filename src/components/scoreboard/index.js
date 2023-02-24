@@ -7,7 +7,7 @@ const Scoreboard = () => {
   const { currentScore, bestScore } = useContext(appContext)
 
   return (
-    <div className={style.scoreboard}>
+    <div className={style.scoreboard} role="presentation">
       <p style={currentScore === 0 ? { color: '#E90064' } : null}>Score: {currentScore}</p>
       <p>Best: {bestScore}</p>
     </div>

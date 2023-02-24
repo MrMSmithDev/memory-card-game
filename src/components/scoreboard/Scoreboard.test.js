@@ -1,14 +1,38 @@
+import { appContext } from '@app'
 import Scoreboard from '@components/scoreboard'
 import { render, screen } from '@testing-library/react'
 
-test('renders current score scoreboard', () => {
-  render(<Scoreboard />)
-  const scoreParagraphElement = screen.getByText(/score: ([0-9]|1[012])/i)
-  expect(scoreParagraphElement).toBeInTheDocument()
-})
+describe('Scoreboard', () => {
+  test('Renders current and best score depending on context', () => {
+    const currentScore = 3
+    const bestScore = 5
+    const context = { currentScore, bestScore }
 
-test('renders best score scoreboard', () => {
-  render(<Scoreboard />)
-  const bestParagraphElement = screen.getByText(/best: ([0-9]|1[012])/i)
-  expect(bestParagraphElement).toBeInTheDocument()
+    render(<Scoreboard />, {
+      wrapper: ({ children }) => (
+        <appContext.Provider value={context}>{children}</appContext.Provider>
+      )
+    })
+
+    const currentScoreElement = screen.getByText(/score: 3/i)
+    expect(currentScoreElement).toBeInTheDocument()
+
+    const bestScoreElement = screen.getByText(/best: 5/i)
+    expect(bestScoreElement).toBeInTheDocument()
+  })
+
+  test('Renders current score in red when current score set to zero', () => {
+    const currentScore = 0
+    const bestScore = 5
+    const context = { currentScore, bestScore }
+
+    render(<Scoreboard />, {
+      wrapper: ({ children }) => (
+        <appContext.Provider value={context}>{children}</appContext.Provider>
+      )
+    })
+
+    const currentScoreElement = screen.getByText(/score: 0/i)
+    expect(currentScoreElement.style.color).toBe('#E90064')
+  })
 })
