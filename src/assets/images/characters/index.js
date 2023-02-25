@@ -1,6 +1,6 @@
 import darthMaulImg from './darth-maul-card.jpg'
 import darthVaderImg from './darth-vader-card.jpg'
-import finnImg from './finn-card-jpg'
+import finnImg from './finn-card.jpg'
 import hanSoloImg from './han-solo-card.jpg'
 import kyloRenImg from './kylo-ren-card.jpg'
 import lukeSkywalkerImg from './luke-skywalker-card.jpg'
