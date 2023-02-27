@@ -24,6 +24,7 @@ module.exports = {
       '@fonts': path.resolve(__dirname, './public/static/fonts'),
       '@characters': path.resolve(__dirname, './src/assets/images/characters'),
       '@components': path.resolve(__dirname, './src/components'),
+      '@routes': path.resolve(__dirname, './src/routes'),
       '@styles': path.resolve(__dirname, './src/globalStyles')
     },
     module: {
