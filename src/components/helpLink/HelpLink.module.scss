@@ -1,0 +1,23 @@
+@import '~@styles/_variables.scss';
+
+.helpLink {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px 10px 8px 10px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+
+
+    &.active {
+        box-shadow: 0 0 30px 20px $hover-color;
+        -moz-box-shadow: 0 0 30px 20px $hover-color;
+        -webkit-box-shadow: 0 0 30px 20px $hover-color;
+    }
+
+    @media (min-width: $breakpoint-small) {
+        font-size: 32px;
+    }
+}
