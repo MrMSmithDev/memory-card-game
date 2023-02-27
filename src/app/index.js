@@ -1,11 +1,11 @@
 import appBackground from '@assets/images/background.jpg'
 import images from '@characters'
-import CardGrid from '@components/cardGrid/index'
-import Footer from '@components/footer'
-import Header from '@components/header'
+// import CardGrid from '@components/cardGrid/index'
+// import Footer from '@components/footer'
+// import Header from '@components/header'
+import RouteSwitch from '@routes/RouteSwitch'
 import PropTypes from 'prop-types'
 import React, { createContext, useState } from 'react'
-import RouteSwitch from '@routes/RouteSwitch'
 
 import style from './App.module.scss'
 
@@ -133,7 +133,7 @@ const AppProvider = ({ children }) => {
 }
 
 AppProvider.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.node).isRequired
+  children: PropTypes.object.isRequired
 }
 
 const App = () => {
@@ -141,11 +141,7 @@ const App = () => {
     <div className="App">
       <div className={style.appBackground} style={{ backgroundImage: `url(${appBackground})` }}>
         <AppProvider>
-          <Header />
-          <RouteSwitch>
-            <CardGrid />
-          </RouteSwitch>
-          <Footer />
+          <RouteSwitch />
         </AppProvider>
       </div>
     </div>
