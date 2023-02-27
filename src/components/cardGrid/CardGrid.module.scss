@@ -2,11 +2,10 @@
 
 .cardGrid {
     display: grid;
-    grid-auto-rows: 400px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 200px;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     grid-gap: 20px;
     justify-items: center;
-    margin-bottom: 20px;
     padding: 10px;
     overflow-x: visible;
     overflow-y: auto;
@@ -32,5 +31,10 @@
 
     &::-webkit-scrollbar-button {
         display: none;
+    }
+
+    @media (min-width: $breakpoint-small) {
+        grid-auto-rows: 400px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
