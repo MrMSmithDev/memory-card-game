@@ -1,8 +1,5 @@
 import appBackground from '@assets/images/background.jpg'
 import images from '@characters'
-// import CardGrid from '@components/cardGrid/index'
-// import Footer from '@components/footer'
-// import Header from '@components/header'
 import RouteSwitch from '@routes/RouteSwitch'
 import PropTypes from 'prop-types'
 import React, { createContext, useState } from 'react'
