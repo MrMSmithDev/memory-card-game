@@ -4,11 +4,13 @@
     color: #fff;
     position: absolute;
     text-align: center;
-    width: 100%;
+    width: 200px;
 
-    bottom: 10px;
-    left: 0;
-    right: 0;
+    bottom: 0;
+    left: -57vh;
+    top: 0;
+
+    transform: rotate(90deg);
 
     .footerLink {
         background-color: rgba(0, 0, 0, 0.5);
@@ -28,12 +30,26 @@
         }
 
         svg {
-            font-size: 32px;
+            font-size: 24px;
+
+            @media (min-width: $breakpoint-small) {
+                font-size: 32px
+            }
         }
 
         @media (min-width: $breakpoint-small) {
             font-size: 32px;
         }
 
+    }
+
+    @media (min-width: $breakpoint-small) {
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        top: auto;
+
+        transform: rotate(0);
+        width: 100%;
     }
 }
