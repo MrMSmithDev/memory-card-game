@@ -3,16 +3,11 @@
 .container {
     align-items: center;
     display: flex;
-    flex-direction: column;
     gap: 5px;
     justify-content: center;
     padding: 0 20px;
     position: relative;
     width: 90%;
-
-    @media (min-width: $breakpoint-small) {
-        flex-direction: row;
-    }
 }
 
 .siteTitle {
@@ -22,6 +17,7 @@
     font-size: 40px;
     padding: 5px 10px;
     text-align: center;
+    width: 60%;
 
     transition: color .3s;
     -webkit-transition: color .3s;
