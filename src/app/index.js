@@ -5,6 +5,7 @@ import Footer from '@components/footer'
 import Header from '@components/header'
 import PropTypes from 'prop-types'
 import React, { createContext, useState } from 'react'
+import RouteSwitch from '@routes/RouteSwitch'
 
 import style from './App.module.scss'
 
@@ -141,7 +142,9 @@ const App = () => {
       <div className={style.appBackground} style={{ backgroundImage: `url(${appBackground})` }}>
         <AppProvider>
           <Header />
-          <CardGrid />
+          <RouteSwitch>
+            <CardGrid />
+          </RouteSwitch>
           <Footer />
         </AppProvider>
       </div>
