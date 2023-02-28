@@ -3,18 +3,18 @@ import Footer from '@components/footer'
 import Header from '@components/header'
 import Help from '@components/help'
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 
 const RouteSwitch = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <Routes>
-        <Route path="memory-card-game/" element={<CardGrid />} />
-        <Route path="memory-card-game/help" element={<Help />} />
+        <Route path="/" element={<CardGrid />} />
+        <Route path="/memory-card-game/help" element={<Help />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
