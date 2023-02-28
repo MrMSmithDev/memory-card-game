@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.1a4d79fc.css",
-    "main.js": "./static/js/main.d29fc524.js",
+    "main.css": "./static/css/main.3b582e02.css",
+    "main.js": "./static/js/main.956cd46b.js",
     "static/media/kylo-ren-card.jpg": "./static/media/kylo-ren-card.2ce1c849d7e738087bf4.jpg",
     "static/media/background.jpg": "./static/media/background.549926a2692bdda2eef0.jpg",
     "static/media/padme-card.jpg": "./static/media/padme-card.8b8a801fa946f4287833.jpg",
@@ -18,11 +18,11 @@
     "static/media/galaxy-web-font.woff": "./static/media/galaxy-web-font.c59b7291b1913b9cbb81.woff",
     "static/media/galaxy-web-font.woff2": "./static/media/galaxy-web-font.fbe5c94916957128b2c0.woff2",
     "index.html": "./index.html",
-    "main.1a4d79fc.css.map": "./static/css/main.1a4d79fc.css.map",
-    "main.d29fc524.js.map": "./static/js/main.d29fc524.js.map"
+    "main.3b582e02.css.map": "./static/css/main.3b582e02.css.map",
+    "main.956cd46b.js.map": "./static/js/main.956cd46b.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a4d79fc.css",
-    "static/js/main.d29fc524.js"
+    "static/css/main.3b582e02.css",
+    "static/js/main.956cd46b.js"
   ]
 }
