@@ -17,10 +17,6 @@
   -ms-transition: color .3s;
   -o-transition: color .3s;
 
-  &:hover {
-    color: $hover-color
-  }
-
   @media (min-width: $breakpoint-small) {
     font-size: 26px;
   }
