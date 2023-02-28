@@ -4,13 +4,13 @@ import { render, screen, within } from '@testing-library/react'
 import React from 'react'
 
 describe('Header', () => {
-  test('Renders site title', () => {
+  it('renders site title', () => {
     render(<Header />)
     const titleElement = screen.getByText(/mind training/i)
     expect(titleElement).toBeInTheDocument()
   })
 
-  test('Renders scoreboard with corresponding scores passed from context', () => {
+  it('renders scoreboard with corresponding scores passed from context', () => {
     const currentScore = 5
     const bestScore = 8
     const context = { currentScore, bestScore }

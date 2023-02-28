@@ -29,7 +29,7 @@ describe('CardGrid', () => {
     ]
   })
 
-  test('Renders all card elements when passed a valid character array', () => {
+  it('renders all card elements when passed a valid character array', () => {
     const context = { characterArr }
     render(<CardGrid />, {
       wrapper: ({ children }) => (
@@ -47,7 +47,7 @@ describe('CardGrid', () => {
     expect(poeCard).toBeInTheDocument()
   })
 
-  test('Renders the cards image for a character passed in', () => {
+  it('renders the cards image for a character passed in', () => {
     const context = { characterArr }
     render(<CardGrid />, {
       wrapper: ({ children }) => (

@@ -4,7 +4,7 @@ import React from 'react'
 import CardImage from './CardImage'
 
 describe('CardImage', () => {
-  test('Renders using the correct url', () => {
+  it('renders using the correct url', () => {
     const imageUrl = 'www.example.com/jarJarBinks'
 
     render(<CardImage imageUrl={imageUrl} />)

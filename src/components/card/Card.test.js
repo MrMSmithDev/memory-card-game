@@ -15,28 +15,28 @@ describe('Card', () => {
     }
   })
 
-  test('Renders a div element with the correct class', () => {
+  it('renders a div element with the correct class', () => {
     render(<Card {...props} />)
     const cardElement = screen.getByRole('button')
     expect(cardElement).toBeInTheDocument()
     expect(cardElement).toHaveClass('card')
   })
 
-  test('Renders a div element with the correct title', () => {
+  it('renders a div element with the correct title', () => {
     render(<Card {...props} />)
     const cardTitleElement = screen.getByText('Jar-Jar Binks')
     expect(cardTitleElement).toBeInTheDocument()
     expect(cardTitleElement).toHaveClass('cardTitle')
   })
 
-  test('Renders a nested cardImage components with the correct image path', () => {
+  it('renders a nested cardImage components with the correct image path', () => {
     render(<Card {...props} />)
     const cardImageElement = screen.getByRole('img')
     expect(cardImageElement).toBeInDocument()
     expect(cardImageElement.imageUrl).toBe('www.example.com/JarJarBinks')
   })
 
-  test('Calls HandleCharacterClick when div is clicked on or if in focus, the enter key is pressed', () => {
+  it('calls HandleCharacterClick when div is clicked on or if in focus, the enter key is pressed', () => {
     const handleCharacterClick = jest.fn()
     const context = { handleCharacterClick }
 
@@ -57,7 +57,7 @@ describe('Card', () => {
     expect(handleCharacterClick).toHaveBeenCalledWith('jarJarBinks')
   })
 
-  test('Component renders with correct prop types', () => {
+  it('renders with correct prop types', () => {
     expect(Card.propTypes.character).toBeDefined()
     expect(Card.propTypes.identifier).toBeDefined()
     expect(Card.propTypes.imageUrl).toBeDefined()

@@ -3,7 +3,7 @@ import Scoreboard from '@components/scoreboard'
 import { render, screen } from '@testing-library/react'
 
 describe('Scoreboard', () => {
-  test('Renders current and best score depending on context', () => {
+  it('renders current and best score depending on context', () => {
     const currentScore = 3
     const bestScore = 5
     const context = { currentScore, bestScore }
@@ -21,7 +21,7 @@ describe('Scoreboard', () => {
     expect(bestScoreElement).toBeInTheDocument()
   })
 
-  test('Renders current score in red when current score set to zero', () => {
+  it('renders current score in red when current score set to zero', () => {
     const currentScore = 0
     const bestScore = 5
     const context = { currentScore, bestScore }

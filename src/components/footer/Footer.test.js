@@ -3,14 +3,14 @@ import { render, screen } from '@testing-library/react'
 import React from 'react'
 
 describe('Footer', () => {
-  test('Renders footer link with correct class', () => {
+  it('renders footer link with correct class', () => {
     render(<Footer />)
     const footerLink = screen.getByRole('contentinfo')
     expect(footerLink).toBeInTheDocument()
     expect(footerLink).toHaveClass('container')
   })
 
-  test('Renders link to github with correct icon and href', () => {
+  it('renders link to github with correct icon and href', () => {
     render(<Footer />)
 
     const gitHubLinkElement = screen.getByText(/MBright90/i)
