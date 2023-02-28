@@ -85,6 +85,7 @@ const AppProvider = ({ children }) => {
   ])
   const [currentScore, setCurrentScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
+  const [isHelpActive, setIsHelpActive] = useState(false)
 
   const findCharacterIndex = (charIdentifier) =>
     characterArr.findIndex((character) => character.identifier === charIdentifier)
@@ -122,6 +123,9 @@ const AppProvider = ({ children }) => {
     characterArr,
     currentScore,
     bestScore,
+
+    isHelpActive,
+    setIsHelpActive,
 
     handleCharacterClick
   }
