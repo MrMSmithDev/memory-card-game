@@ -1,15 +1,16 @@
+import { appContext } from '@app'
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index'
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import style from './HelpLink.module.scss'
 
 const HelpLink = () => {
-  const [isActive, setIsActive] = useState(false)
+  const { isHelpActive, setIsHelpActive } = useContext(appContext)
 
   const handleLinkClick = () => {
-    isActive ? setIsActive(false) : setIsActive(true)
+    isHelpActive ? setIsHelpActive(false) : setIsHelpActive(true)
   }
 
   const handleLinkKeyDown = (e) => {
@@ -18,11 +19,11 @@ const HelpLink = () => {
 
   return (
     <div
-      className={`${style.helpLink} ${isActive ? style.active : null}`}
+      className={`${style.helpLink} ${isHelpActive ? style.active : null}`}
       onClick={handleLinkClick}
       onKeyDown={handleLinkKeyDown}
     >
-      <Link to={isActive ? '/' : '/help'}>
+      <Link to={isHelpActive ? '/' : '/help'}>
         <FontAwesomeIcon icon={faCircleInfo} />
       </Link>
     </div>
