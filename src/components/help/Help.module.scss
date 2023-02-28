@@ -1,11 +1,37 @@
+@import '~@styles/_variables.scss';
+
 .container {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     letter-spacing: 2px;
     line-height: 2rem;
+    max-height: 80vh;
+    overflow-y: auto;
     padding: 10px;
     text-align: center;
     width: 80%;
+
+    &::-webkit-scrollbar {
+        position: absolute;
+        right: 50px;
+        width: .5em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-clip: padding-box;
+        background-color: #fff;
+        border-radius: 5px;
+
+        /* Lightsaber style glow */
+        box-shadow: 0 0 30px 20px $hover-color;
+        -moz-box-shadow: 0 0 30px 20px $hover-color;
+        -webkit-box-shadow: 0 0 30px 20px $hover-color;
+        pointer-events: none;
+    }
+
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
 }
 
 .helpTitle {
