@@ -1,6 +1,6 @@
 {
   "name": "memory-card-game",
-  "homepage": ".",
+  "homepage": "https://mbright90.github.io/memory-card-game/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,6 +16,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "deploy": "git subtree push --prefix build origin gh-pages",
     "test": "craco test",
     "format": "prettier --write './**/*.{js,css,json}' --config ./.prettierrc.json",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json,md}'"
