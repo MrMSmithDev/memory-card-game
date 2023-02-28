@@ -11,7 +11,7 @@ const RouteSwitch = () => {
       <Header />
       <Routes>
         <Route path="/" element={<CardGrid />} />
-        <Route path="/memory-card-game/help" element={<Help />} />
+        <Route path="/help" element={<Help />} />
       </Routes>
       <Footer />
     </HashRouter>
