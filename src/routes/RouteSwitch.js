@@ -10,8 +10,8 @@ const RouteSwitch = () => {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<CardGrid />} />
-        <Route path="/help" element={<Help />} />
+        <Route path="memory-card-game/" element={<CardGrid />} />
+        <Route path="memory-card-game/help" element={<Help />} />
       </Routes>
       <Footer />
     </BrowserRouter>
