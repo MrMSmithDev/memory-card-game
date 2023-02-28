@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "./static/css/main.3b582e02.css",
-    "main.js": "./static/js/main.956cd46b.js",
-    "static/media/kylo-ren-card.jpg": "./static/media/kylo-ren-card.2ce1c849d7e738087bf4.jpg",
-    "static/media/background.jpg": "./static/media/background.549926a2692bdda2eef0.jpg",
-    "static/media/padme-card.jpg": "./static/media/padme-card.8b8a801fa946f4287833.jpg",
-    "static/media/luke-skywalker-card.jpg": "./static/media/luke-skywalker-card.cde7bea7dd02f349bd53.jpg",
-    "static/media/yoda-card.jpg": "./static/media/yoda-card.01e8e75f05eae4a14b2b.jpg",
-    "static/media/han-solo-card.jpg": "./static/media/han-solo-card.f9e5d6b1d1238934528e.jpg",
-    "static/media/princess-leia-card.jpg": "./static/media/princess-leia-card.89549dc146b6cb3a154a.jpg",
-    "static/media/palpatine-card.jpg": "./static/media/palpatine-card.ab13565ac1fbff392dcb.jpg",
-    "static/media/darth-maul-card.jpg": "./static/media/darth-maul-card.cebd9f2b7fc81ef07092.jpg",
-    "static/media/finn-card.jpg": "./static/media/finn-card.4bdad90682e516b2357c.jpg",
-    "static/media/darth-vader-card.jpg": "./static/media/darth-vader-card.fbed4a57f0b1c0fa5d16.jpg",
-    "static/media/rey-card.jpg": "./static/media/rey-card.8f21e2cf82dc98201f4b.jpg",
-    "static/media/obi-wan-card.jpg": "./static/media/obi-wan-card.79222f83d1472e879b65.jpg",
-    "static/media/galaxy-web-font.woff": "./static/media/galaxy-web-font.c59b7291b1913b9cbb81.woff",
-    "static/media/galaxy-web-font.woff2": "./static/media/galaxy-web-font.fbe5c94916957128b2c0.woff2",
-    "index.html": "./index.html",
-    "main.3b582e02.css.map": "./static/css/main.3b582e02.css.map",
-    "main.956cd46b.js.map": "./static/js/main.956cd46b.js.map"
+    "main.css": "/memory-card-game/static/css/main.e6337739.css",
+    "main.js": "/memory-card-game/static/js/main.64d3e071.js",
+    "static/media/kylo-ren-card.jpg": "/memory-card-game/static/media/kylo-ren-card.2ce1c849d7e738087bf4.jpg",
+    "static/media/background.jpg": "/memory-card-game/static/media/background.549926a2692bdda2eef0.jpg",
+    "static/media/padme-card.jpg": "/memory-card-game/static/media/padme-card.8b8a801fa946f4287833.jpg",
+    "static/media/luke-skywalker-card.jpg": "/memory-card-game/static/media/luke-skywalker-card.cde7bea7dd02f349bd53.jpg",
+    "static/media/yoda-card.jpg": "/memory-card-game/static/media/yoda-card.01e8e75f05eae4a14b2b.jpg",
+    "static/media/han-solo-card.jpg": "/memory-card-game/static/media/han-solo-card.f9e5d6b1d1238934528e.jpg",
+    "static/media/princess-leia-card.jpg": "/memory-card-game/static/media/princess-leia-card.89549dc146b6cb3a154a.jpg",
+    "static/media/palpatine-card.jpg": "/memory-card-game/static/media/palpatine-card.ab13565ac1fbff392dcb.jpg",
+    "static/media/darth-maul-card.jpg": "/memory-card-game/static/media/darth-maul-card.cebd9f2b7fc81ef07092.jpg",
+    "static/media/finn-card.jpg": "/memory-card-game/static/media/finn-card.4bdad90682e516b2357c.jpg",
+    "static/media/darth-vader-card.jpg": "/memory-card-game/static/media/darth-vader-card.fbed4a57f0b1c0fa5d16.jpg",
+    "static/media/rey-card.jpg": "/memory-card-game/static/media/rey-card.8f21e2cf82dc98201f4b.jpg",
+    "static/media/obi-wan-card.jpg": "/memory-card-game/static/media/obi-wan-card.79222f83d1472e879b65.jpg",
+    "static/media/galaxy-web-font.woff": "/memory-card-game/static/media/galaxy-web-font.c59b7291b1913b9cbb81.woff",
+    "static/media/galaxy-web-font.woff2": "/memory-card-game/static/media/galaxy-web-font.fbe5c94916957128b2c0.woff2",
+    "index.html": "/memory-card-game/index.html",
+    "main.e6337739.css.map": "/memory-card-game/static/css/main.e6337739.css.map",
+    "main.64d3e071.js.map": "/memory-card-game/static/js/main.64d3e071.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b582e02.css",
-    "static/js/main.956cd46b.js"
+    "static/css/main.e6337739.css",
+    "static/js/main.64d3e071.js"
   ]
 }
