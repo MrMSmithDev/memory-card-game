@@ -51,4 +51,16 @@
 .playButton {
     font-size: 24px;
     margin-top: 20px;
+
+    transition: color .3s;
+    -webkit-transition: color .3s;
+    -moz-transition: color .3s;
+    -ms-transition: color .3s;
+    -o-transition: color .3s;
+
+    &:hover {
+        color: $hover-color;
+
+
+    }
 }
