@@ -21,17 +21,23 @@ const Help = () => {
         different from the one you chose before. You{' '}
         <span className={style.emphasized}>cannot</span> choose the same card twice.
       </p>
-      <p className={style.infoPara}>
+      <p className={style.infoPara} role="contentinfo">
         Repeat these steps until you have chosen all 12 character cards without repeating any
         choices. If the you successfully choose all 12 different cards without making any duplicate
         choices, you win the game. If you make a duplicate choice, your score is reset to zero and
         you must start again from the beginning.
       </p>
-      <p className={style.infoPara}>
+      <p className={style.infoPara} role="contentinfo">
         Most importantly...
         <span className={style.emphasized}>Have fun!</span>
       </p>
-      <div className={style.playButton} onClick={handlePlayClick} onKeyDown={handlePlayClick}>
+      <div
+        className={style.playButton}
+        onClick={handlePlayClick}
+        onKeyDown={handlePlayClick}
+        role="link"
+        tabIndex="-3"
+      >
         <Link to="/">Play</Link>
       </div>
     </div>

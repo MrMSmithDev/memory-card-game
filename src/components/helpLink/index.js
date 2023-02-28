@@ -13,15 +13,15 @@ const HelpLink = () => {
     isHelpActive ? setIsHelpActive(false) : setIsHelpActive(true)
   }
 
-  const handleLinkKeyDown = (e) => {
-    if (e.code === 'Enter') handleLinkClick()
-  }
-
   return (
     <div
       className={`${style.helpLink} ${isHelpActive ? style.active : null}`}
       onClick={handleLinkClick}
-      onKeyDown={handleLinkKeyDown}
+      onKeyDown={(e) => {
+        if (e.code === 'Enter') handleLinkClick
+      }}
+      role="link"
+      tabIndex="-2"
     >
       <Link to={isHelpActive ? '/' : '/help'}>
         <FontAwesomeIcon icon={faCircleInfo} />
