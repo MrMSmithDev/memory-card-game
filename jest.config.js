@@ -6,9 +6,10 @@ module.exports = {
     '\\.(css|scss)$': 'identity-obj-proxy',
     '^@app(.*)$': path.join(__dirname, 'src/app$1'),
     '^@assets(.*)$': path.join(__dirname, 'src/assets$1'),
+    '^@characters(.*)$': path.join(__dirname, 'src/assets/images/characters$1'),
     '^@fonts(.*)$': path.join(__dirname, 'src/assets/fonts$1'),
     '^@components(.*)$': path.join(__dirname, 'src/components$1'),
-    '^@routes(.*)$': path.join(__dirname, 'src/routing$1'),
+    '^@routes(.*)$': path.join(__dirname, 'src/routes$1'),
     '^@styles(.*)$': path.join(__dirname, 'src/globalStyles$1')
   },
   transform: {
