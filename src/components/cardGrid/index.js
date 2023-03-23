@@ -4,9 +4,9 @@ import React, { useContext } from 'react'
 
 import style from './CardGrid.module.scss'
 
-const createRandomIndexes = () => {
+const createRandomIndexes = (arrLength) => {
   // Create array from 0 - 11, to indicate indexes of characters
-  const array = Array.from({ length: 12 }, (_, i) => i)
+  const array = Array.from({ length: arrLength }, (_, i) => i)
 
   for (let i = array.length - 1; i > 0; i -= 1) {
     // Choose a random index to swap the current index with
@@ -34,7 +34,7 @@ const CardGrid = () => {
     ))
   }
 
-  const cardSet = createCardSet(createRandomIndexes())
+  const cardSet = createCardSet(createRandomIndexes(characterArr.length))
 
   return <div className={style.cardGrid}>{cardSet}</div>
 }
