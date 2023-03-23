@@ -1,7 +1,8 @@
 import { appContext } from '@app'
-import CardGrid from '@components/app'
 import { render, screen } from '@testing-library/react'
 import React from 'react'
+
+import CardGrid from './index'
 
 describe('CardGrid', () => {
   let characterArr
@@ -9,24 +10,34 @@ describe('CardGrid', () => {
   beforeEach(() => {
     characterArr = [
       {
-        character: 'Jar-Jar Binks',
+        characterName: 'Jar-Jar Binks',
         identifier: 'jarJarBinks',
         imageUrl: 'www.example.com/JarJarBinks',
         tabIndex: 0
       },
       {
-        character: 'Jyn Erso',
+        characterName: 'Jyn Erso',
         identifier: 'jynErso',
         imageUrl: 'www.example.com/JynErso',
         tabIndex: 0
       },
       {
-        character: 'Poe Dameron',
+        characterName: 'Poe Dameron',
         identifier: 'poeDameron',
         imageUrl: 'www.example.com/poeDameron',
         tabIndex: 0
       }
     ]
+  })
+
+  it('renders to match snapshot', () => {
+    const context = { characterArr }
+    const { container } = render(<CardGrid />, {
+      wrapper: ({ children }) => (
+        <appContext.Provider value={context}>{children}</appContext.Provider>
+      )
+    })
+    expect(container).toMatchSnapshot()
   })
 
   it('renders all card elements when passed a valid character array', () => {
@@ -57,7 +68,7 @@ describe('CardGrid', () => {
 
     const cardImageArr = screen.getAllByRole('img')
     cardImageArr.forEach((cardImage) => {
-      expect(cardImage.style.backgroundImage).toBe(/www.example.com\W/i)
+      expect(cardImage.style.backgroundImage).toMatch(/^url\(www.example.com\.*/i)
     })
   })
 })

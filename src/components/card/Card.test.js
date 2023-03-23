@@ -1,7 +1,8 @@
 import { appContext } from '@app'
-import Card from '@components/app'
 import { fireEvent, render, screen } from '@testing-library/react'
 import React from 'react'
+
+import Card from './index'
 
 describe('Card', () => {
   let props
@@ -15,25 +16,14 @@ describe('Card', () => {
     }
   })
 
-  it('renders a div element with the correct class', () => {
-    render(<Card {...props} />)
-    const cardElement = screen.getByRole('button')
-    expect(cardElement).toBeInTheDocument()
-    expect(cardElement).toHaveClass('card')
-  })
-
-  it('renders a div element with the correct title', () => {
-    render(<Card {...props} />)
-    const cardTitleElement = screen.getByText('Jar-Jar Binks')
-    expect(cardTitleElement).toBeInTheDocument()
-    expect(cardTitleElement).toHaveClass('cardTitle')
-  })
-
-  it('renders a nested cardImage components with the correct image path', () => {
-    render(<Card {...props} />)
-    const cardImageElement = screen.getByRole('img')
-    expect(cardImageElement).toBeInDocument()
-    expect(cardImageElement.imageUrl).toBe('www.example.com/JarJarBinks')
+  it('renders to match snapshot', () => {
+    const context = { handleCharacterClick: () => {} }
+    const { container } = render(<Card {...props} />, {
+      wrapper: ({ children }) => (
+        <appContext.Provider value={context}>{children}</appContext.Provider>
+      )
+    })
+    expect(container).toMatchSnapshot()
   })
 
   it('calls HandleCharacterClick when div is clicked on or if in focus, the enter key is pressed', () => {
