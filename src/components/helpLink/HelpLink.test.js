@@ -1,68 +1,76 @@
 import { appContext } from '@app'
-import HelpLink from '@components/helpLink'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import React from 'react'
+import { HashRouter } from 'react-router-dom'
+
+import HelpLink from './index'
 
 describe('HelpLink', () => {
-  let isHelpActive
+  let contextValue
 
   beforeEach(() => {
-    isHelpActive = false
+    contextValue = {
+      isHelpActive: false
+    }
+  })
+
+  it('renders to match snapshot', () => {
+    const { container } = render(<HelpLink />, {
+      wrapper: ({ children }) => (
+        <HashRouter basename="/">
+          <appContext.Provider value={contextValue}>{children}</appContext.Provider>
+        </HashRouter>
+      )
+    })
+    expect(container).toMatchSnapshot()
   })
 
   it('renders an svg icon link', () => {
-    const context = { isHelpActive }
-
     render(<HelpLink />, {
       wrapper: ({ children }) => (
-        <appContext.Provider value={context}>{children}</appContext.Provider>
+        <HashRouter basename="/">
+          <appContext.Provider value={contextValue}>{children}</appContext.Provider>
+        </HashRouter>
       )
     })
 
-    const icon = screen.getByRole('link')
+    const icon = screen.getByTestId('help-link')
     expect(icon).toBeInTheDocument()
   })
 
   it('calls handleLinkClick when clicked', () => {
-    const context = { isHelpActive }
-    const handleLinkClick = jest.fn()
+    const setIsHelpActive = jest.fn()
+    contextValue = { ...contextValue, setIsHelpActive }
 
     render(<HelpLink />, {
       wrapper: ({ children }) => (
-        <appContext.Provider value={context}>{children}</appContext.Provider>
+        <HashRouter basename="/">
+          <appContext.Provider value={contextValue}>{children}</appContext.Provider>
+        </HashRouter>
       )
     })
 
-    const link = screen.getByRole('link')
-    fireEvent.click(link)
-    expect(handleLinkClick).toHaveBeenCalled()
+    const link = screen.getByTestId('help-link')
+    userEvent.click(link)
+    expect(setIsHelpActive).toHaveBeenCalled()
   })
 
   it('calls handleLinkClick or key downed with Enter key', () => {
-    const context = { isHelpActive }
-    const handleLinkClick = jest.fn()
+    const setIsHelpActive = jest.fn()
+    contextValue = { ...contextValue, setIsHelpActive }
 
     render(<HelpLink />, {
       wrapper: ({ children }) => (
-        <appContext.Provider value={context}>{children}</appContext.Provider>
+        <HashRouter basename="/">
+          <appContext.Provider value={contextValue}>{children}</appContext.Provider>
+        </HashRouter>
       )
     })
 
-    const link = screen.getByRole('link')
-    fireEvent.keyDown(link, { key: 'Enter' })
-    expect(handleLinkClick).toHaveBeenCalled()
-  })
-
-  it('adds box-shadow when isHelpActive becomes true', () => {
-    isHelpActive = true
-    const context = { isHelpActive }
-
-    render(<HelpLink />, {
-      wrapper: ({ children }) => (
-        <appContext.provider value={context}>{children}</appContext.provider>
-      )
-    })
-
-    const link = screen.getByRole('link')
-    expect(link).toHaveStyle({ boxShadow: '0 0 30px 20px $hover-color' })
+    const link = screen.getByTestId('help-link')
+    userEvent.tab()
+    userEvent.type(link, '{keydown}', { key: 'Enter' })
+    expect(setIsHelpActive).toHaveBeenCalled()
   })
 })

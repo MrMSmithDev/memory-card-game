@@ -1,16 +1,36 @@
 import { appContext } from '@app'
-import Help from '@components/helpLink'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
+import React from 'react'
+import { HashRouter } from 'react-router-dom'
+
+import userEvent from '../../../node_modules/@testing-library/user-event/dist/index'
+import Help from './index'
 
 describe('Help', () => {
-  const setIsHelpActive = jest.fn()
+  let contextValue
+  beforeEach(() => {
+    contextValue = {
+      setIsHelpActive: jest.fn()
+    }
+  })
+
+  it('renders to match snapshot', () => {
+    const { container } = render(<Help />, {
+      wrapper: ({ children }) => (
+        <HashRouter basename="/">
+          <appContext.Provider value={contextValue}>{children}</appContext.Provider>
+        </HashRouter>
+      )
+    })
+    expect(container).toMatchSnapshot()
+  })
 
   it('renders a title which says "How to play', () => {
-    const context = { setIsHelpActive }
-
     render(<Help />, {
       wrapper: ({ children }) => (
-        <appContext.Provider value={context}>{children}</appContext.Provider>
+        <HashRouter basename="/">
+          <appContext.Provider value={contextValue}>{children}</appContext.Provider>
+        </HashRouter>
       )
     })
 
@@ -18,64 +38,60 @@ describe('Help', () => {
     expect(title).toBeInTheDocument()
   })
 
-  it('renders two information paragraphs', () => {
-    const context = { setIsHelpActive }
-
+  it('renders three information paragraphs', () => {
     render(<Help />, {
       wrapper: ({ children }) => (
-        <appContext.Provider value={context}>{children}</appContext.Provider>
+        <HashRouter basename="/">
+          <appContext.Provider value={contextValue}>{children}</appContext.Provider>
+        </HashRouter>
       )
     })
 
     const infoParagraphs = screen.getAllByRole('contentinfo')
-    expect(infoParagraphs).toHaveLength(2)
+    expect(infoParagraphs).toHaveLength(3)
   })
 
   it('renders a link to play the game', () => {
-    const context = { setIsHelpActive }
-
     render(<Help />, {
       wrapper: ({ children }) => (
-        <appContext.Provider value={context}>{children}</appContext.Provider>
+        <HashRouter basename="/">
+          <appContext.Provider value={contextValue}>{children}</appContext.Provider>
+        </HashRouter>
       )
     })
 
-    const link = screen.getByRole('link')
+    const link = screen.getByTestId('play-link')
     expect(link).toBeInTheDocument()
   })
 
   it('calls handlePlayClick when the link is clicked', () => {
-    const context = { setIsHelpActive }
-    const handlePlayClick = jest.fn()
-
     render(<Help />, {
       wrapper: ({ children }) => (
-        <appContext.Provider value={context}>{children}</appContext.Provider>
+        <HashRouter basename="/">
+          <appContext.Provider value={contextValue}>{children}</appContext.Provider>
+        </HashRouter>
       )
     })
 
-    const link = screen.getByRole('link')
+    const link = screen.getByTestId('play-link')
 
-    fireEvent.click(link)
-    expect(handlePlayClick).toHaveBeenCalled()
-
-    fireEvent.keyDown(link, { key: 'Enter' })
-    expect(handlePlayClick).toHaveBeenCalled()
+    userEvent.click(link)
+    expect(contextValue.setIsHelpActive).toHaveBeenCalled()
   })
 
   it('calls handlePlayClick when the link is highlighted and pressed "Enter" on', () => {
-    const context = { setIsHelpActive }
-    const handlePlayClick = jest.fn()
-
     render(<Help />, {
       wrapper: ({ children }) => (
-        <appContext.Provider value={context}>{children}</appContext.Provider>
+        <HashRouter basename="/">
+          <appContext.Provider value={contextValue}>{children}</appContext.Provider>
+        </HashRouter>
       )
     })
 
-    const link = screen.getByRole('link')
+    const link = screen.getByTestId('play-link')
 
-    fireEvent.keyDown(link, { key: 'Enter' })
-    expect(handlePlayClick).toHaveBeenCalled()
+    userEvent.tab()
+    userEvent.type(link, 'keydown', { key: 'Enter' })
+    expect(contextValue.setIsHelpActive).toHaveBeenCalled()
   })
 })

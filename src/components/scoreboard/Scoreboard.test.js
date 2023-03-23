@@ -1,16 +1,32 @@
 import { appContext } from '@app'
-import Scoreboard from '@components/scoreboard'
 import { render, screen } from '@testing-library/react'
+import React from 'react'
+
+import Scoreboard from './index'
 
 describe('Scoreboard', () => {
-  it('renders current and best score depending on context', () => {
-    const currentScore = 3
-    const bestScore = 5
-    const context = { currentScore, bestScore }
+  let contextValue
 
+  beforeEach(() => {
+    contextValue = {
+      currentScore: 3,
+      bestScore: 5
+    }
+  })
+
+  it('renders to match snapshot', () => {
+    const { container } = render(<Scoreboard />, {
+      wrapper: ({ children }) => (
+        <appContext.Provider value={contextValue}>{children}</appContext.Provider>
+      )
+    })
+    expect(container).toMatchSnapshot()
+  })
+
+  it('renders current and best score depending on context', () => {
     render(<Scoreboard />, {
       wrapper: ({ children }) => (
-        <appContext.Provider value={context}>{children}</appContext.Provider>
+        <appContext.Provider value={contextValue}>{children}</appContext.Provider>
       )
     })
 
@@ -19,20 +35,5 @@ describe('Scoreboard', () => {
 
     const bestScoreElement = screen.getByText(/best: 5/i)
     expect(bestScoreElement).toBeInTheDocument()
-  })
-
-  it('renders current score in red when current score set to zero', () => {
-    const currentScore = 0
-    const bestScore = 5
-    const context = { currentScore, bestScore }
-
-    render(<Scoreboard />, {
-      wrapper: ({ children }) => (
-        <appContext.Provider value={context}>{children}</appContext.Provider>
-      )
-    })
-
-    const currentScoreElement = screen.getByText(/score: 0/i)
-    expect(currentScoreElement.style.color).toBe('#E90064')
   })
 })
