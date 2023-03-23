@@ -20,7 +20,7 @@ const HelpLink = () => {
       onKeyDown={(e) => {
         if (e.code === 'Enter') handleLinkClick
       }}
-      role="link"
+      data-testid="help-link"
       tabIndex="-2"
     >
       <Link to={isHelpActive ? '/' : '/help'}>

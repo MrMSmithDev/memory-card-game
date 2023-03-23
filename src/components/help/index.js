@@ -14,7 +14,7 @@ const Help = () => {
   return (
     <div className={style.container}>
       <h1 className={style.helpTitle}>How to Play</h1>
-      <p className={style.infoPara}>
+      <p className={style.infoPara} role="contentinfo">
         You will see <span className={style.emphasized}>twelve</span> character cards. You must
         choose one of the cards. Try to remember which card you chose, as each time you choose a
         card, the cards will be shuffled into a random order. Choose another character card that is
@@ -37,6 +37,7 @@ const Help = () => {
         onKeyDown={handlePlayClick}
         role="link"
         tabIndex="-3"
+        data-testid="play-link"
       >
         <Link to="/">Play</Link>
       </div>
