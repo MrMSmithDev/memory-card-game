@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scoreboard renders to match snapshot 1`] = `
+<div>
+  <div
+    class="scoreboard"
+    role="presentation"
+  >
+    <p
+      style="color: rgb(255, 255, 255);"
+    >
+      Score: 
+      3
+    </p>
+    <p
+      style="color: rgb(255, 255, 255);"
+    >
+      Best: 
+      5
+    </p>
+  </div>
+</div>
+`;

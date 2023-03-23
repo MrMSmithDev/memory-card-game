@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardImage renders to match snapshot 1`] = `
+<div>
+  <div
+    class="cardImage"
+    role="img"
+    style="background-image: url(www.example.com/jarJarBinks);"
+  />
+</div>
+`;

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardGrid renders to match snapshot 1`] = `
+<div>
+  <div
+    class="cardGrid"
+  >
+    <div
+      class="card"
+      data-identifier="poeDameron"
+      role="button"
+      tabindex="1"
+    >
+      <p
+        class="cardTitle"
+      >
+        Poe Dameron
+      </p>
+      <div
+        class="cardImage"
+        role="img"
+        style="background-image: url(www.example.com/poeDameron);"
+      />
+    </div>
+    <div
+      class="card"
+      data-identifier="jynErso"
+      role="button"
+      tabindex="2"
+    >
+      <p
+        class="cardTitle"
+      >
+        Jyn Erso
+      </p>
+      <div
+        class="cardImage"
+        role="img"
+        style="background-image: url(www.example.com/JynErso);"
+      />
+    </div>
+    <div
+      class="card"
+      data-identifier="jarJarBinks"
+      role="button"
+      tabindex="3"
+    >
+      <p
+        class="cardTitle"
+      >
+        Jar-Jar Binks
+      </p>
+      <div
+        class="cardImage"
+        role="img"
+        style="background-image: url(www.example.com/JarJarBinks);"
+      />
+    </div>
+  </div>
+</div>
+`;
