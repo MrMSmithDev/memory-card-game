@@ -1,34 +1,61 @@
 import { appContext } from '@app'
-import Header from '@components/app'
-import { render, screen, within } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import React from 'react'
+import { HashRouter } from 'react-router-dom'
+
+import Header from './index'
 
 describe('Header', () => {
+  let context
+
+  beforeEach(() => {
+    context = {
+      currentScore: 5,
+      bestScore: 8,
+
+      isHelpActive: () => {},
+      setIsHelpActive: () => {}
+    }
+  })
+
+  it('renders to match snapshot', () => {
+    const { container } = render(<Header />, {
+      wrapper: ({ children }) => (
+        <HashRouter basename="/">
+          <appContext.Provider value={context}>{children}</appContext.Provider>
+        </HashRouter>
+      )
+    })
+    expect(container).toMatchSnapshot()
+  })
+
   it('renders site title', () => {
-    render(<Header />)
+    render(<Header />, {
+      wrapper: ({ children }) => (
+        <HashRouter basename="/">
+          <appContext.Provider value={context}>{children}</appContext.Provider>
+        </HashRouter>
+      )
+    })
     const titleElement = screen.getByText(/mind training/i)
     expect(titleElement).toBeInTheDocument()
   })
 
   it('renders scoreboard with corresponding scores passed from context', () => {
-    const currentScore = 5
-    const bestScore = 8
-    const context = { currentScore, bestScore }
-
     render(<Header />, {
       wrapper: ({ children }) => (
-        <appContext.Provider value={context}>{children}</appContext.Provider>
+        <HashRouter basename="/">
+          <appContext.Provider value={context}>{children}</appContext.Provider>
+        </HashRouter>
       )
     })
 
-    const scoreboardElement = screen.getByRole('presentation')
-
     // Check the Header component has correctly rendered the scoreboard by
     // reading the scores passed via the context provider
-    const currentScoreboardElement = within(scoreboardElement).getByText(/^score: 5/i)
-    expect(currentScoreboardElement.text).toBeDefined()
+    const currentScoreboardElement = screen.getByText(/^score: 5/i)
+    expect(currentScoreboardElement).toBeInTheDocument()
 
-    const bestScoreboardElement = within(scoreboardElement).getByText(/^best: 8/i)
-    expect(bestScoreboardElement.text).toBeDefined()
+    const bestScoreboardElement = screen.getByText(/^best: 8/i)
+    expect(bestScoreboardElement).toBeInTheDocument()
   })
 })

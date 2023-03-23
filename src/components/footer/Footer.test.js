@@ -1,16 +1,15 @@
-import Footer from '@components/app'
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
+import Footer from './index'
+
 describe('Footer', () => {
-  it('renders footer link with correct class', () => {
-    render(<Footer />)
-    const footerLink = screen.getByRole('contentinfo')
-    expect(footerLink).toBeInTheDocument()
-    expect(footerLink).toHaveClass('container')
+  it('renders to match snapshot', () => {
+    const { container } = render(<Footer />)
+    expect(container).toMatchSnapshot()
   })
 
-  it('renders link to github with correct icon and href', () => {
+  it('renders link to github with correct href', () => {
     render(<Footer />)
 
     const gitHubLinkElement = screen.getByText(/MBright90/i)
@@ -19,9 +18,5 @@ describe('Footer', () => {
       'href',
       'https://github.com/MBright90/memory-card-game'
     )
-
-    const gitHubIconElement = screen.getByRole('img')
-    expect(gitHubIconElement).toBeInTheDocument()
-    expect(gitHubIconElement).toHaveAttribute('data-icon', 'github')
   })
 })
