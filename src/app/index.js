@@ -2,7 +2,7 @@ import appBackground from '@assets/images/background.jpg'
 import images from '@characters'
 import RouteSwitch from '@routes/RouteSwitch'
 import PropTypes from 'prop-types'
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 import style from './App.module.scss'
 
@@ -87,6 +87,12 @@ const AppProvider = ({ children }) => {
   const [bestScore, setBestScore] = useState(0)
   const [isHelpActive, setIsHelpActive] = useState(false)
 
+  const [isVictorious, setIsVictorious] = useState(false)
+
+  useEffect(() => {
+    if (currentScore >= 12) setIsVictorious(true)
+  }, [currentScore])
+
   const findCharacterIndex = (charIdentifier) =>
     characterArr.findIndex((character) => character.identifier === charIdentifier)
 
@@ -119,15 +125,23 @@ const AppProvider = ({ children }) => {
     }
   }
 
+  const resetGame = () => {
+    resetCharacterArr()
+    setCurrentScore(0)
+    setIsVictorious(false)
+  }
+
   const contextValue = {
     characterArr,
     currentScore,
     bestScore,
 
     isHelpActive,
+    isVictorious,
     setIsHelpActive,
 
-    handleCharacterClick
+    handleCharacterClick,
+    resetGame
   }
 
   return <appContext.Provider value={contextValue}>{children}</appContext.Provider>
