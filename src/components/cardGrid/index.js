@@ -2,6 +2,7 @@ import { appContext } from '@app'
 import Card from '@components/card'
 import React, { useContext } from 'react'
 
+import VictoryScreen from '../victoryScreen/index'
 import style from './CardGrid.module.scss'
 
 const createRandomIndexes = (arrLength) => {
@@ -20,7 +21,7 @@ const createRandomIndexes = (arrLength) => {
 }
 
 const CardGrid = () => {
-  const { characterArr } = useContext(appContext)
+  const { characterArr, isVictorious } = useContext(appContext)
 
   const createCardSet = (indexArray) => {
     return indexArray.map((randomIndex) => (
@@ -36,7 +37,12 @@ const CardGrid = () => {
 
   const cardSet = createCardSet(createRandomIndexes(characterArr.length))
 
-  return <div className={style.cardGrid}>{cardSet}</div>
+  return (
+    <React.Fragment>
+      <div className={style.cardGrid}>{cardSet}</div>
+      {isVictorious ? <VictoryScreen /> : null}
+    </React.Fragment>
+  )
 }
 
 export default CardGrid
