@@ -1,0 +1,40 @@
+@import '~@styles/_variables.scss';
+
+.victoryOverlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.victoryScreen {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 3px solid;
+    padding: 30px;
+}
+
+.victoryTitle {
+    font-size: 24px;
+}
+
+.resetBtn {
+    background-color: inherit;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: transform .3s ease-in-out, color .3s;
+    font-size: 30px;
+    margin-top: 20px;
+
+    &:hover {
+        color: $hover-color;
+        transform: scale(1.1)
+    }
+}
