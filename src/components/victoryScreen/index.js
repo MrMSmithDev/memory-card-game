@@ -21,7 +21,13 @@ const VictoryScreen = () => {
     <div className={style.victoryOverlay}>
       <div className={style.victoryScreen} onClick={handleResetGame} onKeyDown={handleKeyDown}>
         <p className={style.victoryTitle}>Congratulations!</p>
-        <p className={style.victoryPara}>You have successfully found all twelve characters</p>
+        <p className={style.victoryPara}>
+          You have successfully found all{' '}
+          <span className={style.colorChanged} aria-hidden="true">
+            twelve
+          </span>{' '}
+          characters
+        </p>
         <button className={style.resetBtn} onClick={handleResetGame} onKeyDown={handleKeyDown}>
           Reset
         </button>
