@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/memory-card-game/static/css/main.6b38f131.css",
-    "main.js": "/memory-card-game/static/js/main.70bdccb2.js",
+    "main.css": "/memory-card-game/static/css/main.66139e4b.css",
+    "main.js": "/memory-card-game/static/js/main.0407b0b8.js",
     "static/media/kylo-ren-card.jpg": "/memory-card-game/static/media/kylo-ren-card.2ce1c849d7e738087bf4.jpg",
     "static/media/background.jpg": "/memory-card-game/static/media/background.549926a2692bdda2eef0.jpg",
     "static/media/padme-card.jpg": "/memory-card-game/static/media/padme-card.8b8a801fa946f4287833.jpg",
@@ -18,11 +18,11 @@
     "static/media/galaxy-web-font.woff": "/memory-card-game/static/media/galaxy-web-font.c59b7291b1913b9cbb81.woff",
     "static/media/galaxy-web-font.woff2": "/memory-card-game/static/media/galaxy-web-font.fbe5c94916957128b2c0.woff2",
     "index.html": "/memory-card-game/index.html",
-    "main.6b38f131.css.map": "/memory-card-game/static/css/main.6b38f131.css.map",
-    "main.70bdccb2.js.map": "/memory-card-game/static/js/main.70bdccb2.js.map"
+    "main.66139e4b.css.map": "/memory-card-game/static/css/main.66139e4b.css.map",
+    "main.0407b0b8.js.map": "/memory-card-game/static/js/main.0407b0b8.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b38f131.css",
-    "static/js/main.70bdccb2.js"
+    "static/css/main.66139e4b.css",
+    "static/js/main.0407b0b8.js"
   ]
 }
