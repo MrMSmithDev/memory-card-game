@@ -12,11 +12,11 @@ describe('Footer', () => {
   it('renders link to github with correct href', () => {
     render(<Footer />)
 
-    const gitHubLinkElement = screen.getByText(/MBright90/i)
+    const gitHubLinkElement = screen.getByText(/MrMSmithDev/i)
     expect(gitHubLinkElement).toBeInTheDocument()
     expect(gitHubLinkElement).toHaveAttribute(
       'href',
-      'https://github.com/MBright90/memory-card-game'
+      'https://github.com/MrMSmithDev/memory-card-game'
     )
   })
 })
